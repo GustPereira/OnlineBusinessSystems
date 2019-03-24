@@ -1,0 +1,19 @@
+<div class="title">
+  <h1>Storage Management System</h1>
+</div>
+<mat-card class="main-card">
+  <div class="main-content">
+    <div class="actions">
+      <button mat-raised-button (click)="openDialogNew()" color="primary">
+        Add a new Storage
+      </button>
+    </div>
+    <div class="charts">
+      <app-gauge
+        *ngFor="let storage of storages.data"
+        [data]="storage"
+        (refresh)="onRefresh()"
+      ></app-gauge>
+    </div>
+  </div>
+</mat-card>

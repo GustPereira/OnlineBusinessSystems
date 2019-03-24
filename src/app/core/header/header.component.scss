@@ -1,0 +1,29 @@
+@import '../../../assets/scss/partials/sizes';
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#logo {
+  width: 143px;
+  height: 42px;
+  outline: none;
+  cursor: pointer;
+}
+
+.mat-button {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.expand {
+  flex: 1;
+}
+
+@media screen and (max-width: 425px) {
+  #container {
+    padding: 0px;
+  }
+}

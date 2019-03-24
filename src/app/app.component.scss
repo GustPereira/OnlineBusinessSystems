@@ -1,0 +1,32 @@
+@import '../assets/scss/partials/sizes';
+
+#wrapper {
+  height: 100%;
+}
+
+.content {
+  padding: 30px;
+}
+
+.color-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #37cc68;
+  height: 300px;
+}
+
+@media screen and (max-width: 425px) {
+  .content {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content {
+    padding: 0px;
+  }
+}
