@@ -16,8 +16,8 @@ export class EditStorageComponent implements OnInit {
 
 	form: FormGroup = this.fb.group({
 		storage: [ this.data.storage, [ Validators.required ] ],
-		max_capacity: [ this.data.max_capacity, [ Validators.required ] ],
-		product_amount: [ this.data.product_amount, [ Validators.required ] ],
+		max_capacity: [ this.data.max_capacity, [ Validators.required, Validators.min(0) ] ],
+		product_amount: [ this.data.product_amount, [ Validators.required, Validators.min(0) ] ],
 		product: [ this.data.product, [ Validators.required ] ],
 		storage_key: [ this.data.storage_key ]
 	});
@@ -50,8 +50,11 @@ export class EditStorageComponent implements OnInit {
 	}
 
 	checkCapacity() {
-		if (this.form.controls.product_amount.value >= this.form.controls.max_capacity.value) {
-			this.form.controls.product_amount.setValue(this.form.controls.max_capacity.value);
+		if (this.form.controls.product_amount.invalid) return;
+		if (this.form.controls.product_amount.value > this.form.controls.max_capacity.value) {
+			this.form.controls.product_amount.setErrors({ max: true });
+		} else {
+			this.form.controls.product_amount.setErrors(null);
 		}
 	}
 

@@ -30,7 +30,7 @@ export class StorageService {
 	}
 
 	public put(data) {
-		let index = this.mockData.data.findIndex((f) => (f.storage_key = data.storage_key));
+		let index = this.mockData.data.findIndex((f) => f.storage_key == data.storage_key);
 		this.mockData.data[index] = data;
 		return of(this.mockData);
 		// return this.http.put(this.webApiUrl + '/' + data.storage_key, data);

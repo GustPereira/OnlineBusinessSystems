@@ -17,11 +17,15 @@
       placeholder="Capacity"
       formControlName="max_capacity"
       (change)="checkCapacity()"
+      [min]="0"
     />
     <mat-error *ngIf="form.controls.max_capacity.invalid">
-      <div *ngIf="form.controls.max_capacity.errors.required">
+      <span *ngIf="form.controls.max_capacity.errors.required">
         Required field
-      </div>
+      </span>
+      <span *ngIf="form.controls.max_capacity.errors.min">
+        Value should be positive
+      </span>
     </mat-error>
   </mat-form-field>
   <mat-form-field appearance="outline">
@@ -31,21 +35,33 @@
         {{ productEnum[key] }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="form.controls.product.invalid">
+      <div *ngIf="form.controls.product.errors.required">
+        Required field
+      </div>
+    </mat-error>
   </mat-form-field>
   <mat-form-field appearance="outline">
-    <mat-label>Amout</mat-label>
+    <mat-label>Amount</mat-label>
     <input
       type="number"
       matInput
-      placeholder="Amout"
+      placeholder="Amount"
       formControlName="product_amount"
       [max]="form.controls.max_capacity.value"
+      [min]="0"
       (change)="checkCapacity()"
     />
     <mat-error *ngIf="form.controls.product_amount.invalid">
-      <div *ngIf="form.controls.product_amount.errors.required">
+      <span *ngIf="form.controls.product_amount.errors.required">
         Required field
-      </div>
+      </span>
+      <span *ngIf="form.controls.product_amount.errors.min">
+        Value should be positive
+      </span>
+      <span *ngIf="form.controls.product_amount.errors.max">
+        Value should be lesser or equal to capacity
+      </span>
     </mat-error>
   </mat-form-field>
 </form>
