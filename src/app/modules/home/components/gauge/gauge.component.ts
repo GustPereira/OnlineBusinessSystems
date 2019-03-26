@@ -32,11 +32,15 @@ export class GaugeComponent implements OnInit {
 	constructor(private dialog: MatDialog) {}
 
 	ngOnInit() {
+		const isEmpty = this.data.product_amount == 0;
 		const isFull = this.data.product_amount == this.data.max_capacity;
-		const percentValue = isFull ? 99 : this.data.product_amount * 100 / this.data.max_capacity;
+		let percentValue = 1;
+		if (!isEmpty) percentValue = isFull ? 99 : this.data.product_amount * 100 / this.data.max_capacity;
 
 		if (isFull) {
 			this.options.arcColors = [ 'rgb(224, 39, 31)', 'rgb(224, 39, 31)' ];
+		} else if (percentValue == 1) {
+			this.options.arcColors = [ 'lightgray', 'lightgray' ];
 		} else if (percentValue > 50) {
 			this.options.arcColors = [ 'rgb(236, 228, 95)', 'lightgray' ];
 		}
