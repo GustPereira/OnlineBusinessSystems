@@ -16,6 +16,7 @@
       matInput
       placeholder="Capacity"
       formControlName="max_capacity"
+      (change)="checkCapacity()"
     />
     <mat-error *ngIf="form.controls.max_capacity.invalid">
       <div *ngIf="form.controls.max_capacity.errors.required">

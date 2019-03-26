@@ -1,27 +1,13 @@
 # OnlineBusinessSystems
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+This project was created at the VanHack Hackaton for the company Online Business Systems.
 
-## Development server
+This system manages storage of farm in one single page, the user can add a new storage and set what kind of product is stored and how much of it is in each storage. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The dashboard shows the current storage capacities. 
 
-## Code scaffolding
+By editing the storage the user can change the amount of product on the storage, the name of the storage and change what product is stored in.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For future implementations, would be add and management for the transport of the goods out of the storage, providing a log of every time any product was added or withdraw from the storage.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Link for live demo https://gustpereira.github.io/OnlineBusinessSystems/
