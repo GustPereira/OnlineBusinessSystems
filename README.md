@@ -1,6 +1,6 @@
 # OnlineBusinessSystems
 
-This project was created at the VanHack Hackaton at the São Paulo Mission for the company Online Business Systems.
+This project was created at the VanHack São Paulo Mission Hackaton for the company Online Business Systems.
 
 This system manages storage of farm in one single page, the user can add a new storage and set what kind of product is stored and how much of it is in each storage. 
 
